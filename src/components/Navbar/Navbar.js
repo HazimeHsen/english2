@@ -148,25 +148,10 @@ export const Navbar = () => {
         </a>
       </RouterLink>
       <div>
-        <ThemeToggle />
+        {/* <ThemeToggle isMobile={true} /> */}
         <NavToggle onClick={() => dispatch({ type: 'toggleMenu' })} menuOpen={menuOpen} />
       </div>
-      <nav className={styles.nav}>
-        <div className={styles.navList}>
-          {navLinks.map(({ label, pathname }) => (
-            <RouterLink href={pathname} scroll={false} key={label}>
-              <a
-                data-navbar-item
-                className={styles.navLink}
-                aria-current={getCurrent(pathname)}
-                onClick={handleNavItemClick}
-              >
-                {label}
-              </a>
-            </RouterLink>
-          ))}
-        </div>
-      </nav>
+
       <Transition unmount in={menuOpen} timeout={msToNum(tokens.base.durationL)}>
         {visible => (
           <nav className={styles.mobileNav} data-visible={visible}>

@@ -154,15 +154,12 @@
   transition-property: background;
   transition-duration: var(--durationL);
   transition-timing-function: var(--bezierFastoutSlowin);
-  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(16px);
 
-  @media (--mediaMobile), (--mediaMobileLS) {
     display: flex;
-  }
 
   @media (--mediaUseMotion) {
     transition-property: transform, background;
